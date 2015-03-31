@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 
 public class StartingActivity extends ActionBarActivity {
-
+//test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
