@@ -1,9 +1,12 @@
 package com.ubermage.www.ubermage;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 
 public class StartingActivity extends ActionBarActivity {
@@ -12,6 +15,7 @@ public class StartingActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting);
+
     }
 
 
@@ -35,5 +39,17 @@ public class StartingActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startTraining(View view){
+        Intent intent = new Intent(this, TrainingActivity.class);
+        startActivity(intent);
+    }
+
+    public void editProfile(View view){
+        Toast toast = Toast.makeText(this, "to be implemented", Toast.LENGTH_SHORT);
+        toast.show();
+
+
     }
 }
