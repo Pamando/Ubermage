@@ -18,4 +18,13 @@ public class OCR {
         g0_1 x = new g0_1(database);
         return x.parse(query);
     }
+
+    /**
+     * insert 5x5 array of Booleans, so Boolean[25].
+     * @param query
+     * @return name of input
+     */
+    public static String g0_1_2_5x5(Boolean[] query){
+        return com.ubermage.www.ubermage.db.EName.get(g0_1_1_5x5(query,com.ubermage.www.ubermage.db.d5x5.get()));
+    }
 }
