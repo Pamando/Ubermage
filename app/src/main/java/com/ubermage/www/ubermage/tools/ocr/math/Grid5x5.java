@@ -1,4 +1,4 @@
-package com.ubermage.www.ubermage.tools;
+package com.ubermage.www.ubermage.tools.ocr.math;
 
 import java.util.ArrayList;
 

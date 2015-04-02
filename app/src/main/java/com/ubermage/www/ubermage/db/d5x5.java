@@ -1,0 +1,54 @@
+package com.ubermage.www.ubermage.db;
+
+import java.util.ArrayList;
+
+/**
+ * db prototype containing database of symbols and their names maybe
+ * Created by laowai.reaxyl (Maertin Dietreich) on 02.04.2015 for Ubermage.
+ */
+public class d5x5 {
+    public static ArrayList<Boolean[]> get(){
+        ArrayList<Boolean[]> out = new ArrayList<Boolean[]>();
+        final Boolean o=false, x=true;
+        { //null
+            Boolean[] local =
+                    {
+                            o,o,o,o,o,
+                            o,o,o,o,o,
+                            o,o,o,o,o,
+                            o,o,o,o,o,
+                            o,o,o,o,o
+                    };
+            out.set(0, local);
+        }
+        { //F
+            Boolean[] local =
+                    {
+                            x,x,x,x,x,
+                            x,o,o,o,o,
+                            x,x,x,x,x,
+                            x,o,o,o,o,
+                            x,o,o,o,o
+                    };
+            out.set(1, local);
+        }
+        { //U (X)
+            Boolean[] local =
+                    {
+                            x,o,o,o,x,
+                            o,x,o,x,o,
+                            o,o,x,o,o,
+                            o,x,o,x,o,
+                            x,o,o,o,x
+                    };
+            out.set(1, local);
+        }
+
+
+
+           //TODO all the others
+
+
+        return out;
+    }
+}

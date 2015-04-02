@@ -1,4 +1,4 @@
-package com.ubermage.www.ubermage.tools;
+package com.ubermage.www.ubermage.tools.ocr.math;
 
 import java.util.ArrayList;
 
@@ -17,9 +17,13 @@ public class Dims {
         dims = new ArrayList<Integer>(3);
         add(x); add(y); add(z);
     }
-    Dims(){
+    Dims(int...in){
         dims = new ArrayList<Integer>();
+        for(int e:in){
+            add(e);
+        }
     }
+    //Dims(){dims = new ArrayList<Integer>();}
     public void add(int newDim){
         if(newDim < 1){
             throw new IllegalArgumentException("dims cannot be less than 1. Learn some math noob");

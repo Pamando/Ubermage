@@ -1,4 +1,4 @@
-package com.ubermage.www.ubermage.tools;
+package com.ubermage.www.ubermage.tools.ocr.math;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class Tensor<T> {
             throw new IllegalArgumentException("Tensor too large for data structure!");
         }
         tensor=new ArrayList<T>(susum);
-        for(T x:tensor) x=null; //OPTIMIZE maybe unneeded
+        //for(T x:tensor) x=null; //OPTIMIZE maybe unneeded
 
     }
     void set(Coordinate position, T input){
@@ -37,6 +37,11 @@ public class Tensor<T> {
         }
         return true;
     }
+
+    public Dims getDims() {
+        return dims;
+    }
+
     T get(Coordinate position){
         return tensor.get(locate(position));
     }
