@@ -54,6 +54,7 @@ public class TrainingActivity extends ActionBarActivity {
 
                 int x = (int) event.getX();
                 int y = (int) event.getY();
+                int action = event.getAction();
 
                 for (int i = 0; i < userCanvas.getChildCount(); i++) {
                     View current = userCanvas.getChildAt(i);
@@ -71,8 +72,16 @@ public class TrainingActivity extends ActionBarActivity {
 
                     }
                 }
+
+                if(action == MotionEvent.ACTION_UP){
+                    Toast.makeText(TrainingActivity.this, "stahp "  ,
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 return true;
             }
+
+
 
         });
         /*userCanvas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
