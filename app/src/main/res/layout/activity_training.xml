@@ -17,14 +17,15 @@
 
         <LinearLayout android:layout_weight="1"
             android:layout_height="fill_parent"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent"
+            android:id="@+id/userCanvasLinearLayout">
 
             <GridView
                 android:id="@+id/userCanvas"
                 android:numColumns="5"
-                android:layout_gravity="center_horizontal"
+
+                android:gravity="center"
                 android:columnWidth="20dp"
-                android:padding="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" >
 
