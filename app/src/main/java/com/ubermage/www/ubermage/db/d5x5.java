@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 public class d5x5 {
     public static ArrayList<Boolean[]> get(){
-        ArrayList<Boolean[]> out = new ArrayList<Boolean[]>();
+        ArrayList<Boolean[]> out = new ArrayList<>();
         final Boolean o=false, x=true;
         { //null
-            Boolean[] local =
+            Boolean[] local = new Boolean[]
                     {
                             o,o,o,o,o,
                             o,o,o,o,o,
@@ -19,10 +19,10 @@ public class d5x5 {
                             o,o,o,o,o,
                             o,o,o,o,o
                     };
-            out.set(0, local);
+            out.add(local);
         }
         { //F
-            Boolean[] local =
+            Boolean[] local = new Boolean[]
                     {
                             x,x,x,x,x,
                             x,o,o,o,o,
@@ -30,10 +30,10 @@ public class d5x5 {
                             x,o,o,o,o,
                             x,o,o,o,o
                     };
-            out.set(1, local);
+            out.add(local);
         }
         { //U (X)
-            Boolean[] local =
+            Boolean[] local = new Boolean[]
                     {
                             x,o,o,o,x,
                             o,x,o,x,o,
@@ -41,7 +41,18 @@ public class d5x5 {
                             o,x,o,x,o,
                             x,o,o,o,x
                     };
-            out.set(1, local);
+            out.add(local);
+        }
+        { //U (X)
+            Boolean[] local = new Boolean[]
+                    {
+                            x,o,o,o,o,
+                            x,o,o,o,o,
+                            x,o,o,o,o,
+                            x,o,o,o,o,
+                            x,o,o,o,o
+                    };
+            out.add(local);
         }
 
 

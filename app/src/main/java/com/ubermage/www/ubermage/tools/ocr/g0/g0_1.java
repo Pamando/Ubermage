@@ -18,7 +18,9 @@ public class g0_1 {
     public int parse(Boolean [] in){
         outLoop: for(int i=0; i<db.size();i++){
             for(int j=0;j<25;j++){
-                if(!db.get(i)[j].equals(in[j])) continue outLoop;
+                if(!db.get(i)[j].equals(in[j])) {
+                    continue outLoop;
+                }
             }
             return i;
         }

@@ -101,47 +101,6 @@ public class TrainingActivity extends ActionBarActivity {
 
 
         });
-        /*userCanvas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(TrainingActivity.this, "" + position ,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
-        /*userCanvas.setOnTouchListener(new View.OnTouchListener(){
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_MOVE){
-                    Toast.makeText(TrainingActivity.this, "Ahojk"  ,
-                            Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            }
-
-        });*/
-
-       /* userCanvas.setOnTouchListener(new View.OnTouchListener(){
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                int x = (int) event.getX();
-                int y = (int) event.getY();
-                switch(action){
-                    case MotionEvent.ACTION_DOWN:
-                        drawOnProjectedBitMap((GridView) v, bitmapMaster, x, y);
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        drawOnProjectedBitMap((GridView) v, bitmapMaster, x, y);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        drawOnProjectedBitMap((GridView) v, bitmapMaster, x, y);
-                        break;
-                }
-                return true;
-            }});*/
     }
 
 

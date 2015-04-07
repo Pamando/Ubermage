@@ -25,6 +25,6 @@ public class OCR {
      * @return name of input
      */
     public static String g0_1_2_5x5(Boolean[] query){
-        return com.ubermage.www.ubermage.db.EName.get(g0_1_1_5x5(query,com.ubermage.www.ubermage.db.d5x5.get()));
+        return String.valueOf(g0_1_1_5x5(query,com.ubermage.www.ubermage.db.d5x5.get()));
     }
 }
