@@ -25,11 +25,10 @@ public class TrainingActivity extends ActionBarActivity {
 
     GridView userCanvas;
     Paint paint;
-    Bitmap bitmapMaster;
-    Canvas canvasMaster;
     private GridView mGrid;
     private LinearLayout mCanvas;
     private ImageView mLastImageView;
+    private boolean[] inputImage = new boolean[25];
 
 
     @Override
@@ -55,7 +54,10 @@ public class TrainingActivity extends ActionBarActivity {
                 int x = (int) event.getX();
                 int y = (int) event.getY();
                 int action = event.getAction();
-
+                inputImage = new boolean[25];
+                for(int i = 0; i<inputImage.length; i++ ){
+                    inputImage[i] = false;
+                }
                 for (int i = 0; i < userCanvas.getChildCount(); i++) {
                     View current = userCanvas.getChildAt(i);
                     if (current instanceof ImageView) {
@@ -67,6 +69,7 @@ public class TrainingActivity extends ActionBarActivity {
                                 mLastImageView = b;
                                 Toast.makeText(v.getContext(), "ImageView clicked: " + b.getId(),
                                         Toast.LENGTH_SHORT).show();
+                                inputImage[b.getId()] = true;
                             }
                         }
 
