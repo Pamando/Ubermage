@@ -38,7 +38,7 @@ public class userCanvasAdapter extends BaseAdapter {
     }
 
     public int getCount() {
-        return mThumbIds.length;
+        return 25;
     }
 
     public Object getItem(int position) {
@@ -64,19 +64,14 @@ public class userCanvasAdapter extends BaseAdapter {
         }
 
 
-        imageView.setImageResource(mThumbIds[position]);
+        imageView.setImageResource(mThumbIds[0]);
         imageView.setId(position);
         return imageView;
     }
 
     // references to our images
     private Integer[] mThumbIds = {
-            R.drawable.test01 , R.drawable.test02 , R.drawable.test03 , R.drawable.test04 , R.drawable.test05,
-            R.drawable.test06 , R.drawable.test07 , R.drawable.test08 , R.drawable.test09 , R.drawable.test10,
-            R.drawable.test11 , R.drawable.test12 , R.drawable.test13 , R.drawable.test14 , R.drawable.test15,
-            R.drawable.test16 , R.drawable.test17 , R.drawable.test18 , R.drawable.test19 , R.drawable.test20,
-            R.drawable.test21 , R.drawable.test22 , R.drawable.test23 , R.drawable.test24 , R.drawable.test25
-
+            R.drawable.test01
     };
 
 
