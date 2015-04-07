@@ -37,7 +37,7 @@ public class TrainingActivity extends ActionBarActivity {
     private TextView debuggingDatabaseOutput;
     private TextView debuggingViewInputArray;
 
-    private Boolean[] inputImage;
+    private Boolean[] inputImage = new Boolean[25];
 
 
     @Override
@@ -67,18 +67,19 @@ public class TrainingActivity extends ActionBarActivity {
                 int x = (int) event.getX();
                 int y = (int) event.getY();
                 int action = event.getAction();
-                inputImage = new Boolean[25];
+
 
 
                 if(action == MotionEvent.ACTION_DOWN){
                     //------
                     debuggingViewInput.setText("");
                     //------
+                    for(int i = 0; i<inputImage.length; i++ ){
+                        inputImage[i] = false;
+                    }
                 }
 
-                for(int i = 0; i<inputImage.length; i++ ){
-                    inputImage[i] = false;
-                }
+
                 for (int i = 0; i < userCanvas.getChildCount(); i++) {
                     View current = userCanvas.getChildAt(i);
                     if (current instanceof ImageView) {
@@ -107,7 +108,11 @@ public class TrainingActivity extends ActionBarActivity {
                     debuggingDatabaseOutput.setText("");
                     debuggingViewInputArray.setText("");
                     debuggingDatabaseOutput.setText(g0_1_2_5x5(inputImage));
-                    debuggingViewInputArray.setText(String.valueOf(inputImage.toString()));
+                    String holder = "";
+                    for(int i = 0; i < inputImage.length; i++){
+                        holder = holder + inputImage[i];
+                    }
+                    debuggingViewInputArray.setText(holder);
                 }
 
                 return true;
