@@ -1,5 +1,5 @@
 package com.ubermage.www.ubermage.db;
-
+//PATRIK IST EIN ...
 import java.util.ArrayList;
 
 /**
