@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import com.ubermage.www.ubermage.customAdapters.userCanvasAdapter;
 
+import org.w3c.dom.Text;
+
 import static com.ubermage.www.ubermage.tools.ocr.OCR.g0_1_2_5x5;
 
 
@@ -30,7 +32,11 @@ public class TrainingActivity extends ActionBarActivity {
     private GridView mGrid;
     private LinearLayout mCanvas;
     private ImageView mLastImageView;
-    private TextView debuggingView;
+
+    private TextView debuggingViewInput;
+    private TextView debuggingDatabaseOutput;
+    private TextView debuggingViewInputArray;
+
     private Boolean[] inputImage;
 
 
@@ -39,7 +45,10 @@ public class TrainingActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
-        debuggingView = (TextView) findViewById(R.id.debuggingViewTraining);
+        debuggingViewInput = (TextView) findViewById(R.id.debuggingUserInputTraining);
+        debuggingDatabaseOutput = (TextView) findViewById(R.id.debuggingDatabaseOutputTraining);
+        debuggingViewInputArray = (TextView) findViewById(R.id.debuggingUserInputArrayTraining);
+
         userCanvas = (GridView) findViewById(R.id.userCanvas);
         LinearLayout canvas = (LinearLayout) findViewById(R.id.userCanvasLinearLayout);
         paint = new Paint();
@@ -63,7 +72,7 @@ public class TrainingActivity extends ActionBarActivity {
 
                 if(action == MotionEvent.ACTION_DOWN){
                     //------
-                    debuggingView.setText("");
+                    debuggingViewInput.setText("");
                     //------
                 }
 
@@ -80,10 +89,13 @@ public class TrainingActivity extends ActionBarActivity {
                             if (b != mLastImageView) {
                                 mLastImageView = b;
 
+                                //---------- testing
                                 String placeHolder;
-                                placeHolder = debuggingView.getText().toString();
+                                placeHolder = debuggingViewInput.getText().toString();
                                 placeHolder = placeHolder + " > " + String.valueOf(b.getId());
-                                debuggingView.setText(placeHolder);
+                                debuggingViewInput.setText(placeHolder);
+
+                                //-----------
                                 inputImage[b.getId()] = true;
                             }
                         }
@@ -92,7 +104,10 @@ public class TrainingActivity extends ActionBarActivity {
                 }
 
                 if(action == MotionEvent.ACTION_UP){
-                    debuggingView.setText(g0_1_2_5x5(inputImage));
+                    debuggingDatabaseOutput.setText("");
+                    debuggingViewInputArray.setText("");
+                    debuggingDatabaseOutput.setText(g0_1_2_5x5(inputImage));
+                    debuggingViewInputArray.setText(String.valueOf(inputImage.toString()));
                 }
 
                 return true;

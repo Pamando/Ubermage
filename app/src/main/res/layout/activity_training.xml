@@ -9,17 +9,31 @@
 
     <LinearLayout android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/debuggingUserInputTraining"
-            android:textSize="@dimen/abc_text_size_large_material"/>
 
-       
 
         <LinearLayout android:layout_weight="1"
             android:layout_height="fill_parent"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/debuggingUserInputTraining"
+                android:textSize="@dimen/abc_text_size_large_material"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/debuggingUserInputArrayTraining"
+                android:textSize="@dimen/abc_text_size_large_material"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/debuggingDatabaseOutputTraining"
+                android:textSize="@dimen/abc_text_size_large_material"/>
 
         </LinearLayout>
 
