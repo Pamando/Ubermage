@@ -44,7 +44,7 @@
 
             <GridView
                 android:id="@+id/userCanvas"
-                android:numColumns="5"
+                android:numColumns="20"
 
                 android:gravity="center"
                 android:columnWidth="20dp"

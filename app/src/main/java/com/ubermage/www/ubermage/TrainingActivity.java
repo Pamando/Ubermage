@@ -37,7 +37,7 @@ public class TrainingActivity extends ActionBarActivity {
     private TextView debuggingDatabaseOutput;
     private TextView debuggingViewInputArray;
 
-    private Boolean[] inputImage = new Boolean[25];
+    private Boolean[] inputImage = new Boolean[400];
 
 
 

@@ -32,13 +32,13 @@ public class userCanvasAdapter extends BaseAdapter {
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        mCanvasWidth = ((size.x / 2 )) / 5 ;
-        mCanvasHeigth = ((size.y / 2) - 8*10) / 6;
+        mCanvasWidth = ((size.x )) / 40 ;
+        mCanvasHeigth = ((size.y ) - 8*10) / 44;
 
     }
 
     public int getCount() {
-        return 25;
+        return 400;
     }
 
     public Object getItem(int position) {
