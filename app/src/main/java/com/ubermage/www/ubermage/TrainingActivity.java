@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import com.ubermage.www.ubermage.customAdapters.userCanvasAdapter;
 
+import static com.ubermage.www.ubermage.tools.ocr.OCR.g0_1_2_5x5;
+
 
 public class TrainingActivity extends ActionBarActivity {
 
@@ -28,7 +30,8 @@ public class TrainingActivity extends ActionBarActivity {
     private GridView mGrid;
     private LinearLayout mCanvas;
     private ImageView mLastImageView;
-    private boolean[] inputImage = new boolean[25];
+    private TextView debuggingView;
+    private Boolean[] inputImage;
 
 
     @Override
@@ -36,6 +39,7 @@ public class TrainingActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
+        debuggingView = (TextView) findViewById(R.id.debuggingViewTraining);
         userCanvas = (GridView) findViewById(R.id.userCanvas);
         LinearLayout canvas = (LinearLayout) findViewById(R.id.userCanvasLinearLayout);
         paint = new Paint();
@@ -54,7 +58,15 @@ public class TrainingActivity extends ActionBarActivity {
                 int x = (int) event.getX();
                 int y = (int) event.getY();
                 int action = event.getAction();
-                inputImage = new boolean[25];
+                inputImage = new Boolean[25];
+
+
+                if(action == MotionEvent.ACTION_DOWN){
+                    //------
+                    debuggingView.setText("");
+                    //------
+                }
+
                 for(int i = 0; i<inputImage.length; i++ ){
                     inputImage[i] = false;
                 }
@@ -67,8 +79,11 @@ public class TrainingActivity extends ActionBarActivity {
 
                             if (b != mLastImageView) {
                                 mLastImageView = b;
-                                Toast.makeText(v.getContext(), "ImageView clicked: " + b.getId(),
-                                        Toast.LENGTH_SHORT).show();
+
+                                String placeHolder;
+                                placeHolder = debuggingView.getText().toString();
+                                placeHolder = placeHolder + " > " + String.valueOf(b.getId());
+                                debuggingView.setText(placeHolder);
                                 inputImage[b.getId()] = true;
                             }
                         }
@@ -77,8 +92,7 @@ public class TrainingActivity extends ActionBarActivity {
                 }
 
                 if(action == MotionEvent.ACTION_UP){
-                    Toast.makeText(TrainingActivity.this, "stahp "  ,
-                            Toast.LENGTH_SHORT).show();
+                    debuggingView.setText(g0_1_2_5x5(inputImage));
                 }
 
                 return true;
