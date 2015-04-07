@@ -38,7 +38,7 @@ public class TrainingActivity extends ActionBarActivity {
     private TextView debuggingViewInputArray;
 
     private Boolean[] inputImage = new Boolean[25];
-    private int bla;
+
 
 
     @Override
@@ -66,7 +66,7 @@ public class TrainingActivity extends ActionBarActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 int x = (int) event.getX();
-                int y = (int) event.getY();
+                int y = (int) event.getY();//aaaa
                 int action = event.getAction();
 
 
